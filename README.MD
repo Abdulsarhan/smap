@@ -2,7 +2,10 @@
 
 Simple Hashmap implementation that uses a sha256 hash function.
 The idea is to reduce collisions when you are hashing stuff so that lookups can be made faster.
+> [!WARNING]
+> when you smap_set a value that is a string, the pointer to the string is owned by the smap implementation, and will be freed if overwriten or if the map is freed.
 
+> **Note:** when you call smap_set with the same key twice the second value will overwrite the first one.
 ## usage
 
 ```c
